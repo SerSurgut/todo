@@ -14,7 +14,6 @@ const Form = () => {
             id: tasks.length+1
             //Задать уникальные не получается, ограничения в mockapi
         }
-        console.log(task);
         fetch('https://5fd371a78cee610016ae04ca.mockapi.io/tasks', {
             method:'POST',
             headers:{

@@ -4,7 +4,7 @@ import './StatusFilter.css'
 const StatusFilter = () => {
         const dispatch = useDispatch()
         const {btns} = useSelector(store=>store)
-                const giveDoneTasks = (e) =>{
+        const giveDoneTasks = (e) =>{
                 fetch('https://5fd371a78cee610016ae04ca.mockapi.io/tasks')
                 .then(res => res.json())
                 .then(tasks => {
@@ -25,7 +25,7 @@ const StatusFilter = () => {
                 fetch('https://5fd371a78cee610016ae04ca.mockapi.io/tasks')
                 .then(res => res.json())
                 .then(tasks => {
-                        dispatch({type:"ADD_TASKS", payload:tasks})
+                        dispatch({type:"GIVE_ALL_TASKS", payload:tasks})
                         })
 
         }

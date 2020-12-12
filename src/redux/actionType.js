@@ -1,0 +1,6 @@
+export const ADD_TASK="ADD_TASK" 
+export const DEL_TASK="DEL_TASK"
+export const CHANGE_TASK="CHANGE_TASK" 
+export const GIVE_ALL_TASKS="GIVE_ALL_TASKS"
+export const GIVE_ACTIVE_TASKS="GIVE_ACTIVE_TASKS"
+export const GIVE_DONE_TASKS="GIVE_DONE_TASKS"
