@@ -1,7 +1,7 @@
 import React, { useEffect} from 'react';
 import { useDispatch, useSelector} from 'react-redux';
-import Form from '../components/Form'
-import ListTasks from '../components/ListTasks'
+import Form from '../../components/Form/Form'
+import ListTasks from '../../components/ListTasks/ListTasks'
 import './List.css'
 
 const List = () => {

@@ -1,10 +1,10 @@
 import React from 'react';
 import {BrowserRouter, Route,Switch} from 'react-router-dom'
-import List from './pages/List'
-import Main from './pages/Main'
-import NewTask from './pages/NewTask'
-import NotMatchPage from './pages/NotMatchPage'
-import Navbar from './components/Navbar'
+import List from './pages/List/List'
+import Main from './pages/Main/Main'
+import NewTask from './pages/NewTask/NewTask'
+import NotMatchPage from './pages/NotMatchPage/NotMatchPage'
+import Navbar from './components/Navbar/Navbar'
 
 function App() {
 

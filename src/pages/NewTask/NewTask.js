@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import ListTasks from '../components/ListTasks'
+import ListTasks from '../../components/ListTasks/ListTasks'
 import './NewTask.css'
 
 const NewTask = () => {

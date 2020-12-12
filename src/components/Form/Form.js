@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import StatusFilter from './StatusFilter'
+import StatusFilter from '../StatusFilter/StatusFilter'
 import './Form.css'
 
 const Form = () => {
