@@ -1,9 +1,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-
 const ListTasks = ({tasks}) => {
 
 const dispatch= useDispatch()
+const onClickTask =(event)=>{
+    event.target.classList.toggle("active") 
+}
     const delTask = (id)=>{
         fetch(`https://5fd371a78cee610016ae04ca.mockapi.io/tasks/${id}`, {
             method:'DELETE',
@@ -41,11 +43,13 @@ const dispatch= useDispatch()
                             <div className="form-check form-switch">
                                 <input className="form-check-input" type="checkbox" onChange={()=>check(task.id)} checked={task.status?true:false}/>
                             </div>
-                            <div className={'flex-grow-1 active'} style={task.status?{textDecoration:"line-through"}:null}>
+                            <div onClick={onClickTask} 
+                                className={'flex-grow-1 listItem'} id={`text${task.id}`}
+                                style={task.status?{textDecoration:"line-through"}:null}>
                                 {task.text}
                             </div>
                                    <button type="button" onClick={()=>delTask(task.id)}
-                                            className="btn btn-outline-danger btn-sm">
+                                        className="btn btn-outline-danger btn-sm trash">
                                         <i className="fa fa-trash-o" />
                                     </button>
                             </li>)
