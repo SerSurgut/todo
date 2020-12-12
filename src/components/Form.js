@@ -1,16 +1,20 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import StatusFilter from './StatusFilter'
+import './Form.css'
 
 const Form = () => {
     const dispatch = useDispatch()
+    const {tasks} = useSelector(store=>store) 
     const addTask = (e)=>{
         e.preventDefault()
         const task = {
-            id: Date.now(),
             text:e.target.text.value,
-            status: false
+            status: false,
+            id: tasks.length+1
+            //Задать уникальные не получается, ограничения в mockapi
         }
+        console.log(task);
         fetch('https://5fd371a78cee610016ae04ca.mockapi.io/tasks', {
             method:'POST',
             headers:{
@@ -26,7 +30,10 @@ const Form = () => {
     return (
         <form onSubmit={addTask}>
             <div className="form-group mt-2  d-flex">
-                <input type="text" name="text" className="form-control mr-3" placeholder="Текст..."/>
+                <input  type="text" 
+                        name="text" 
+                        className="form-control mr-3" 
+                        placeholder="Текст..."/>
                 <StatusFilter/>
             </div>
            

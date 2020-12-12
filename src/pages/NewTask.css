@@ -1,0 +1,9 @@
+h2.title {
+    font-family: 'Russo One', sans-serif;
+    color: #444444;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 45%;
+    font-size: 3rem;
+}

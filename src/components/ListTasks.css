@@ -1,0 +1,31 @@
+.listItem {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0 15px;
+    font-size: 20px;
+    cursor: pointer;
+     
+}
+
+.listItem.active {
+    overflow: auto;
+    white-space: break-spaces;
+    word-break: break-all;
+
+}
+
+.form-check input[type="checkbox"] {
+    width: 19px;
+    height: 19px;
+    margin-top: 5px;
+}
+
+.trash {
+    height: 30px;
+    border-width: 3px;
+}
+
+.trash i {
+    font-size: 18px;
+}

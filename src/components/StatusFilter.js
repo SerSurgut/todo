@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import './StatusFilter.css'
 const StatusFilter = () => {
         const dispatch = useDispatch()
         const {btns} = useSelector(store=>store)

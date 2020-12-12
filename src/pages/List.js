@@ -2,6 +2,7 @@ import React, { useEffect} from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import Form from '../components/Form'
 import ListTasks from '../components/ListTasks'
+import './List.css'
 
 const List = () => {
 const dispatch =  useDispatch()
@@ -18,10 +19,15 @@ const {tasks} = useSelector(store=>store)
  
     return (
         <div className='mt-5'>
-            <h1>Список дел</h1>
+            
         <div>
             <Form className='mt-5'/>
-            <ListTasks tasks={tasks} />
+        <>
+            {
+                tasks.length>0?<><h1 className="text-center title">Список дел</h1><ListTasks tasks={tasks} />
+                               </>:<h2 className="text-center title">Пока нет дел ...</h2>
+            }
+        </>
         </div>
         </div>
     );

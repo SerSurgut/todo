@@ -1,4 +1,11 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+#root {
+    min-height: 100vh;
+    background: #eaf9fd;
+    padding-bottom: 5rem;
+}
 
 .newTaskCounter {
     display: inline-flex;
@@ -13,29 +20,4 @@
     font-weight: 900;
     font-size: 14px;
     color: #fff;
-}
-
-.listItem {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    padding: 0 15px;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.listItem.active {
-    overflow: auto;
-    white-space: break-spaces;
-    word-break: break-all;
-}
-
-input[type="checkbox"] {
-    width: 19px;
-    height: 19px;
-    margin-top: 8px;
-}
-
-.trash {
-    height: 30px;
 }

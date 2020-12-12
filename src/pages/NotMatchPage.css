@@ -1,0 +1,28 @@
+.textBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #eaf9fd;
+    z-index: 1;
+}
+
+.textBox h1 {
+    font-family: 'Russo One', sans-serif;
+    font-size: 18rem;
+    color: #444444;
+    text-shadow: 2px 12px 15px #0000004d;
+}
+
+.textBox h2 {
+    font-family: 'Russo One',
+        sans-serif;
+    color: #444444;
+    text-shadow: 2px 2px 15px #00000024;
+}
