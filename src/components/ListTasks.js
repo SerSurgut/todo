@@ -4,7 +4,7 @@ const ListTasks = ({tasks}) => {
 
 const dispatch= useDispatch()
 const onClickTask =(event)=>{
-    event.target.classList.toggle("active") 
+    event.target.classList.toggle("active")
 }
     const delTask = (id)=>{
         fetch(`https://5fd371a78cee610016ae04ca.mockapi.io/tasks/${id}`, {
