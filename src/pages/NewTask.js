@@ -1,14 +1,18 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import ListTasks from '../components/ListTasks'
 
 const NewTask = () => {
+    const tasks = useSelector(store=>store.newTask)
+    console.log(tasks
+        );
     return (
         <div className="mt-5">
-            <h1 className="text-center">Последние задачи</h1>
-                <ul className="list-group list-group-flush mt-5">
-                    <li className="list-group-item">Задача №1</li>
-                    <li className="list-group-item">Задача №2</li>
-                    <li className="list-group-item">Задача №3</li>
-                </ul>
+            {
+                tasks.length>0?<><h1 className="text-center">Последние задачи</h1>
+                                 <ListTasks tasks={tasks} />
+                               </>:<h2 className="text-center mt-5">Все по старому</h2>
+            }
         </div>
     );
 };
