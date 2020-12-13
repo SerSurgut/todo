@@ -1,6 +1,5 @@
 import React,{useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import StatusFilter from '../StatusFilter/StatusFilter'
 import {Button, Modal, Form} from 'react-bootstrap'
 import { fetchAddTaskAC } from "../../redux/fetchAC";
 import './ModalForm.css'
@@ -19,7 +18,7 @@ const ModalForm = () => {
             text:e.target.text.value,
             status: false,
             id: tasks.length+1 
-            //Задать уникальные не получается, ограничения в mockapi
+            //ограничения в mockapi
         }
         console.log(task);
         dispatch(fetchAddTaskAC(task))
@@ -38,16 +37,18 @@ const ModalForm = () => {
                         aria-labelledby="contained-modal-title-vcenter">
 
                     <Modal.Header closeButton>
-                        <Modal.Title id="example-custom-modal-styling-title">Заголовок</Modal.Title>
+                        <Modal.Title className="title-modal">Создать новое дело</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form onSubmit={addTask}>
                                 <Form.Group >
                                     <Form.Control type="text" name="title" placeholder="Название"size="lg" required />
                                     <Form.Text/>
-                                    <Form.Control type="text" name="text" as="textarea" placeholder="Описание задачи"/>
+                                    <Form.Control className="mt-3" type="text" name="text"  as="textarea" placeholder="Описание задачи"/>
                                 </Form.Group>
-                            <Button variant="success" type="submit">Создать</Button>
+                            <div className="text-center">
+                                <Button className="mt-3" variant="success" type="submit" size="lg" >Создать</Button>
+                            </div>
                         </Form>
                     </Modal.Body>
                 </Modal>

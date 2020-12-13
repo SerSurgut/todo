@@ -30,20 +30,21 @@ export const fetchAddTaskAC =(payload)=>{
     }
 }
 
-export const fetchDeleteTaskAC =(payload)=>{
+export const fetchDeleteTaskAC = (payload)=>{
     return (dispatch)=>{
-        fetch(`https://5fd371a78cee610016ae04ca.mockapi.io/tasks/${payload}`, {
+         fetch(`https://5fd371a78cee610016ae04ca.mockapi.io/tasks/${payload}`, {
             method:'DELETE',
             headers:{
                 'Content-type':'application/json'
             }
         });
+        localStorage.removeItem(payload)
         dispatch(deleteTaskAC(payload))
     }
 }
 
 export const fetchChangeTaskAC =(payload)=>{
-    const {status} = payload.tasks.filter(el=> el.id === payload.id)[0]
+    const {status,id} = payload.tasks.filter(el=> el.id === payload.id)[0]
     return (dispatch)=>{
         fetch(`https://5fd371a78cee610016ae04ca.mockapi.io/tasks/${payload.id}`, {
             method:'PUT',
@@ -54,6 +55,7 @@ export const fetchChangeTaskAC =(payload)=>{
                 status:!status,
              })
         });
+        localStorage.removeItem(id)
         dispatch(changeTaskAC(payload.id))
 
     }
