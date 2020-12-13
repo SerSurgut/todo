@@ -1,12 +1,13 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchDeleteTaskAC,fetchChangeTaskAC } from "../../redux/fetchAC";
+import {Link, useHistory} from "react-router-dom";
 import './ListTasks.css'
 
 const ListTasks = ({tasks}) => {
-
+    const history = useHistory();
     const dispatch= useDispatch()
-
+    console.log(history);
     return (
         <div>
             <ul className="list-group">
@@ -22,15 +23,16 @@ const ListTasks = ({tasks}) => {
                                             checked={task.status?true:false}/>
                                 </div>
 
-                                <div onClick={(e)=>e.target.classList.toggle("active")} 
-                                     className={'flex-grow-1 listItem'} 
-                                     id={`text${task.id}`}
-                                     style={task.status?{
+                                <Link to={`/list/${task.id}`}
+                                      className={'flex-grow-1 listItem'}
+                                      onClick={()=>localStorage.setItem(task.id, JSON.stringify(task))} 
+                                      id={`text${task.id}`}
+                                      style={task.status?{
                                          textDecoration:"line-through", 
                                          fontWeight: '600'
                                          }:null}>
-                                    {task.text}
-                                </div>
+                                     {task.text}
+                                </Link>
 
                                 <button onClick={()=>dispatch(fetchDeleteTaskAC(task.id))}
                                         className="btn btn-outline-danger btn-sm trash"

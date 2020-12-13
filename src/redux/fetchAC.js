@@ -43,7 +43,7 @@ export const fetchDeleteTaskAC =(payload)=>{
 }
 
 export const fetchChangeTaskAC =(payload)=>{
-    const {status} = payload.tasks.filter(el=> el.id === payload.id)
+    const {status} = payload.tasks.filter(el=> el.id === payload.id)[0]
     return (dispatch)=>{
         fetch(`https://5fd371a78cee610016ae04ca.mockapi.io/tasks/${payload.id}`, {
             method:'PUT',
