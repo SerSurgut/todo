@@ -2,7 +2,7 @@ import React, { useEffect} from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import Form from '../../components/Form/Form'
 import ListTasks from '../../components/ListTasks/ListTasks'
-import { giveAllTasksAC } from "../../redux/actionCreators";
+import { fetchGiveAllTasksAC } from "../../redux/fetchAC";
 import './List.css'
 
 const List = () => {
@@ -10,11 +10,7 @@ const dispatch =  useDispatch()
 const {tasks} = useSelector(store=>store)
 
  useEffect(() => {
-    fetch('https://5fd371a78cee610016ae04ca.mockapi.io/tasks')
-      .then(res => res.json())
-      .then(tasks => {
-          dispatch(giveAllTasksAC(tasks))
-        })
+          dispatch(fetchGiveAllTasksAC())
   }, [dispatch])
  
     return (

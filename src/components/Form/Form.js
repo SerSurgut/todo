@@ -1,28 +1,22 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import StatusFilter from '../StatusFilter/StatusFilter'
+import { fetchAddTaskAC } from "../../redux/fetchAC";
 import './Form.css'
 
 const Form = () => {
     const dispatch = useDispatch()
     const {tasks} = useSelector(store=>store) 
+
     const addTask = (e)=>{
         e.preventDefault()
         const task = {
             text:e.target.text.value,
             status: false,
-            id: tasks.length+1
+            id: tasks.length+1 
             //Задать уникальные не получается, ограничения в mockapi
         }
-        fetch('https://5fd371a78cee610016ae04ca.mockapi.io/tasks', {
-            method:'POST',
-            headers:{
-                'Content-type':'application/json'
-            },
-            body:JSON.stringify(task)
-            
-        });
-        dispatch({type:'ADD_TASK', payload:task})
+        dispatch(fetchAddTaskAC(task))
         e.target.text.value = ""
     }
     

@@ -5,8 +5,6 @@ import './NewTask.css'
 
 const NewTask = () => {
     const tasks = useSelector(store=>store.newTask)
-    console.log(tasks
-        );
     return (
         <>
             {
