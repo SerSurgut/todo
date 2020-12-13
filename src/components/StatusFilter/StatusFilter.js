@@ -1,48 +1,25 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import {fetchGiveActiveTasksAC,fetchGiveDoneTasksAC,fetchGiveAllTasksAC} from '../../redux/fetchAC';
 import './StatusFilter.css'
+
 const StatusFilter = () => {
         const dispatch = useDispatch()
         const {btns} = useSelector(store=>store)
-        const giveDoneTasks = (e) =>{
-                fetch('https://5fd371a78cee610016ae04ca.mockapi.io/tasks')
-                .then(res => res.json())
-                .then(tasks => {
-                        dispatch({type:"GIVE_DONE_TASKS", payload:tasks})
-                        })
-        }
-
-        const giveActiveTasks = () =>{
-                fetch('https://5fd371a78cee610016ae04ca.mockapi.io/tasks')
-                .then(res => res.json())
-                .then(tasks => {
-                        dispatch({type:"GIVE_ACTIVE_TASKS", payload:tasks})
-                        })   
-
-        }
-
-        const giveAllTasks = () =>{
-                fetch('https://5fd371a78cee610016ae04ca.mockapi.io/tasks')
-                .then(res => res.json())
-                .then(tasks => {
-                        dispatch({type:"GIVE_ALL_TASKS", payload:tasks})
-                        })
-
-        }
     return (
         <div className="btn-group filter">
           <button type="button"
                   name="all" 
-                  onClick={giveAllTasks}
+                  onClick={()=>dispatch(fetchGiveAllTasksAC())}
                   className={btns.all?"btn btn-primary":"btn btn-outline-secondary"}>Все</button>
 
           <button type="button"
-                  onClick={giveActiveTasks} 
+                  onClick={()=>dispatch(fetchGiveActiveTasksAC())}
                   name="active"
                   className={btns.active?"btn btn-primary":"btn btn-outline-secondary"}>Активные</button>
 
           <button type="button"
-                  onClick={giveDoneTasks}
+                  onClick={()=>dispatch(fetchGiveDoneTasksAC())}
                   name="done"
                   className={btns.done?"btn btn-primary":"btn btn-outline-secondary"}>Завершённые</button>
         </div>
