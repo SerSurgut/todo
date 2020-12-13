@@ -1,6 +1,6 @@
 # Todo List 
 
-<img src="https://i.ibb.co/vY1z6Fb/todo.png" alt="TodoList img">
+<img src="https://i.ibb.co/WGDz664/todo.png"/>
 
 <br>
 
@@ -25,3 +25,8 @@
 1. <b>git clone</b> git@github.com:SerSurgut/todo.git
 2. <b>npm install</b>
 2. <b>npm start</b>
+
+### Деплой
+
+Посмотреть рабочую версию на Heroku
+https://sersurgut-todo.herokuapp.com/
