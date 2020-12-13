@@ -1,0 +1,41 @@
+.navbar {
+    z-index: 10;
+}
+
+.navbar .navbar-brand {
+    font-size: 2rem
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.2rem;
+    /* font-family: 'Russo One', sans-serif; */
+    letter-spacing: 1px;
+    display: flex;
+    font-weight: 600;
+    margin-left: 15px;
+    color: #d1d1d1 !important;
+    position: relative;
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    width: 0%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: 0.4s ease;
+    background: #eaf9fd;
+}
+
+.navbar-nav .nav-link:hover:after {
+    width: 100%;
+    transition: 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #eaf9fd !important;
+}

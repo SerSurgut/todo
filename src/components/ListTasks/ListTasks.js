@@ -1,16 +1,14 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchDeleteTaskAC,fetchChangeTaskAC } from "../../redux/fetchAC";
-import {Link, useHistory} from "react-router-dom";
+import {Link} from "react-router-dom";
 import './ListTasks.css'
 
 const ListTasks = ({tasks}) => {
-    const history = useHistory();
     const dispatch= useDispatch()
-    console.log(history);
     return (
         <div>
-            <ul className="list-group">
+            <ul className="list-group mt-2">
 
                 {tasks && tasks.map(task=>{
                     
@@ -31,7 +29,7 @@ const ListTasks = ({tasks}) => {
                                          textDecoration:"line-through", 
                                          fontWeight: '600'
                                          }:null}>
-                                     {task.text}
+                                     {task.title}
                                 </Link>
 
                                 <button onClick={()=>dispatch(fetchDeleteTaskAC(task.id))}

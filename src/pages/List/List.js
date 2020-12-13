@@ -1,6 +1,6 @@
 import React, { useEffect} from 'react';
 import { useDispatch, useSelector} from 'react-redux';
-import Form from '../../components/Form/Form'
+import StatusFilter from '../../components/StatusFilter/StatusFilter'
 import ListTasks from '../../components/ListTasks/ListTasks'
 import { fetchGiveAllTasksAC } from "../../redux/fetchAC";
 import './List.css'
@@ -15,14 +15,18 @@ const {tasks} = useSelector(store=>store)
  
     return (
         <div className='mt-5'>            
-            <Form/>
 
-            {tasks.length>0?<>
-                                <h1 className="text-center title">Список дел</h1>
-                                <ListTasks tasks={tasks} />
+                            <div className="d-flex justify-content-between align-items-baseline">                                
+                                <h1 className="text-center title d-flex">Список дел</h1>
+                                <StatusFilter/>
+                            </div>
+                               {tasks.length>0? <ListTasks tasks={tasks} />
 
-                            </>:<h2 className="text-center title">Пока нет дел ...</h2>
-            }
+                            :<div className="text-center titleOff">
+                            <h2 className="text-center">Пока нет дел ...</h2>
+                            </div>}
+
+            
         </div>
     );
 };

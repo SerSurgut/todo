@@ -5,3 +5,20 @@ h1.title {
         sans-serif;
     font-size: 3rem;
 }
+
+.titleOff {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2;
+}
+
+.titleOff h2 {
+    color: #444444;
+    font-family: 'Russo One',
+        sans-serif;
+    font-size: 2rem;
+}

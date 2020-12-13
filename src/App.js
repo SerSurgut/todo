@@ -4,14 +4,14 @@ import List from './pages/List/List'
 import Main from './pages/Main/Main'
 import NewTask from './pages/NewTask/NewTask'
 import NotMatchPage from './pages/NotMatchPage/NotMatchPage'
-import Navbar from './components/Navbar/Navbar'
+import NavbarPanel from './components/NavbarPanel/NavbarPanel'
 import Detail  from "./components/Detail/Detail";
 
 function App() {
 
   return (
     <BrowserRouter>
-    <Navbar/>
+    <NavbarPanel/>
     <div className="container">
       <Switch>
           <Route path={'/'} exact component={Main}/>
