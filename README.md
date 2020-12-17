@@ -4,14 +4,17 @@
 
 
 
-<img src="https://i.ibb.co/WGDz664/todo.png"/>
-
 ## Используемые технологии
+
 + React
 + Redux
 + React Router
 + Redux Thunk
 + Bootstrap UI
+
+## Скриншот
+
+<img src="https://i.ibb.co/WGDz664/todo.png"/>
 
 ## Фукционал приложения
 - добавления задачи
@@ -21,6 +24,7 @@
 - фильтр по выполненным / не выполненным задачам
 - интеграция с бэкэндом на базе https://www.mockapi.io/
 - просмотр новых задач
+
 
 ## Установка
 
