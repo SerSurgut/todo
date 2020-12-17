@@ -1,8 +1,10 @@
 # Todo List 
 
-<img src="https://i.ibb.co/WGDz664/todo.png"/>
+Простой список дел на React с использованием Redux(+Thunk), Bootstrap UI и интеграция с бэкэндом на www.mockapi.io
 
-<br>
+
+
+<img src="https://i.ibb.co/WGDz664/todo.png"/>
 
 ## Используемые технологии
 + React
