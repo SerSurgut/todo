@@ -1,9 +1,5 @@
 # Todo List 
-+ React
-+ Redux
-+ React Router
-+ Redux Thunk
-+ Bootstrap UI
+React + Redux + React Router + Redux Thunk
 
 <img src="https://i.ibb.co/WGDz664/todo.png"/>
 
